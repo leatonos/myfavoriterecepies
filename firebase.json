@@ -10,7 +10,7 @@
 
     "site": "myfavoriterecipies",
 
-    "public": "y",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
