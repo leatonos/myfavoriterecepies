@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
     <title>My favorite recipes</title>
 
    <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -39,30 +40,34 @@
 
   //This is how we add data
 
-  /*
-    db.collection("users").add({
-      first: "Ada",
-      last: "Lovelace",
-      born: 1815
-  })
-  .then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
-  })
-  .catch((error) => {
-      console.error("Error adding document: ", error);
-  });
 
-*/
+    db.collection("Recepies").add({
+       recipeName: "Italian Pasta"
+    })
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch((error) => {
+        console.error("Error adding document: ", error);
+    });
+
+
+
   //This is how to retrieve information from Database
   db.collection("Recepies").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
+
+      /*
         console.log(`${doc.id} => ${doc.data()}`);
         console.log(`${doc.get("recipeName")}`);
         console.log(`${doc.get("difficulty")}`);
         console.log(`${doc.get("howToDo")}`);
         console.log(doc.get("ingridients"));
         console.log(`${doc.get("time")}`);
-        console.log(doc.data())
+      */
+
+        console.log(doc.data());
+        
     });
   });
 
@@ -71,14 +76,30 @@
   
   </head>
   <body>
+    <header>
+      <div class="logo_container"></div>
+      <nav class="desktop_menu">
+        <ul>
+          <li>All recipes</li>
+          <li>Post Recipes</li>
+          <li>My favorites</li>
+          <li>About Us</li>
+        </ul>
+      </nav>
+      <div class="login_register">
+        <p><span>Login</span>|<span>Register</span></p>
+      </div>
 
-    <h1>Hello there!</h1>
-    
+    </header>
+    <main>
+      <h1></h1>
+    </main>
+    <footer></footer>
+
 
 
     <script>
-      
-     
     </script>
+
   </body>
 </html>

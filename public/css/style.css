@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    float: left;
+    margin: 0px;
+    width: 100%;
+    height: 85px;
+    background-color: coral;
+}
+
+.logo_container{
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+.desktop_menu{
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+
+nav ul{
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.desktop_menu li{
+    display:block;
+    float: left;
+    text-align: center;
+    margin: 0px 20px;
+    padding: auto;
+    width: 15%;
+    height: 60px;
+    background-color:lightgray;
+}
+
+.login_register{
+    float: left;
+    width: 10%;
+    height: 100%;
+}
