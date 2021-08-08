@@ -12,7 +12,7 @@
             <div>
                 <a href='#'>My Favorite Recipes</a>
             </div>
-            <nav>
+            <nav class="desktop">
                 <ul id='MenuItems'>
                     <li><a href='#'>All Recipies</a></li>
                     <li><a href='#'>Post Recipies</a></li>
@@ -22,8 +22,10 @@
                 </ul>
             </nav>
         </div>
+        <div class="mobile">
         <div id='login-form'class='login-page'>
             <div class="form-box">
+                <h3>Let us know about you</h3>
                 <div class='button-box'>
                     <div id='btn'></div>
                     <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
@@ -44,6 +46,35 @@
             <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>
             <button type="submit"class='submit-btn'>Register</button>
 	         </form>
+            </div>
+        </div>
+        </div>
+        <div class="desktop">
+            <div id='login-form'class='login-page'>
+                <div class="form-box">
+                    <h3>Let us know about you</h3>
+                    <div class='button-box'>
+                        <div id='btn'></div>
+                        <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                        <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                    </div>
+                    <form id='login' class='input-group-login'>
+                        <input type='text'class='input-field'placeholder='Enter Username' required>
+                        <input type='password' class='input-field'placeholder='Enter Password' required>
+                        <input type='checkbox' class='check-box'><span>Remember Password</span>
+                        <button type='submit' class='submit-btn'>Login</button>
+             </form>
+             <form id='register' class='input-group-register'>
+                <input type='text'class='input-field'placeholder='Enter your Name'required>
+                <input type='email'class='input-field'placeholder='Enter email'required>
+                <input type='password'class='input-field'placeholder='Enter Password'required>
+                <input type='text'class='input-field'placeholder='Enter your Country'required>
+                <input type='text'class='input-field'placeholder='Tell us something about you'required>
+                <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>
+                <button type="submit"class='submit-btn'>Register</button>
+                 </form>
+                </div>
+            </div>
             </div>
         </div>
     </div>

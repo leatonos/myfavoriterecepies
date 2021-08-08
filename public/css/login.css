@@ -1,7 +1,9 @@
-*{
+
+body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 .full-page
 {
@@ -12,6 +14,10 @@
     background-size: cover;
     position: absolute;
 
+}
+h3{
+    color:bisque;
+    text-align: center;
 }
 .navbar
 {
@@ -173,10 +179,6 @@ span
     color: white;
     font-size: 15;
 }
-
-
-
-
 
 
 
