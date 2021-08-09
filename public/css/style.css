@@ -120,11 +120,13 @@ ul.topnav {
       background-size:cover;
   }
 
+  .recipe-page{
+      height: 450px;
+  }
 
-
-.description{
+ .description{
     width: 100%;
-}
+ }
 
 .recipe-image{
     width: 100%;
@@ -209,7 +211,7 @@ ul.topnav {
     background-size: contain;
     background-color: teal;
     float: left;
-    
+    cursor: pointer;
 }
 
 .recipe-image-favorite{
@@ -256,7 +258,43 @@ ul.topnav {
 
 .detail_image-favorite{
     width: 100%;
+}
 
+/* Recipe Page */
+
+.recipe-info-container{
+    width: 100%;
+}
+
+.ingridients{
+    float: left;
+    width: 70%;
+}
+.recipe-details-single{
+    float: left;
+    width: 30%;
+}
+
+.recipe-detail-single{
+    float: left;
+    width: 50%;
+}
+
+.detail_image-single{
+    width: calc(100% - 100px);
+    padding: 0 50px;
+    padding-top: 30px;
+}
+
+.detail_text-single{
+    text-align: center;
+    font-size: 21px;
+}
+
+.howtodo_container{
+    float: left;
+    position: relative;
+    width: 100%;
 }
 
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title>My favorite recipes</title>
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo_container"></div>
+      <nav class="desktop_menu">
+        <ul class="topnav">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">My favorites</a></li>
+          <li><a href="#news">Post a recipe</a></li>
+          <li><a href="#home">Home</a></li>
+        </ul>
+      </nav>
+      <div class="login_register">
+        <p><span>Login</span> | <span>Register</span></p>
+      </div>
+    </header>
+    <main>
+      <div class="main-container">
+        <h1 style="text-align: center;">Recipe Name</h1>
+        <div class="image-recipe recipe-page"></div>
+          <div class="recipe-info-container">
+            <div class="ingridients">
+              <h2>Ingridients</h2>
+              <ul>
+                <li>100g of something</li>
+                <li>200g of something</li>
+                <li>1L of something</li>
+                <li>20oz of something</li>
+              </ul>
+            </div>
+            <div class="recipe-details-single">
+              <div class="recipe-detail-single">
+                <img class="detail_image-single" src="img/difficulty.png"/>
+                <p class="detail_text-single">Easy</p>
+              </div>
+              <div class="recipe-detail-single">
+                <img class="detail_image-single" src="img/time.png" />
+                <p class="detail_text-single">30 min</p>
+              </div> 
+            </div>
+          </div>
+          <div class="howtodo_container">
+            <h2>How to do</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet nunc ligula. Proin eu vehicula ligula. Suspendisse ullamcorper malesuada ipsum sit amet viverra. Maecenas vitae sem vitae ipsum venenatis dictum. Maecenas gravida aliquam aliquam.
+              Aenean dignissim quis elit eu gravida. Duis vitae dolor ligula. Donec efficitur, leo interdum consequat maximus, leo sem iaculis dolor, a bibendum neque urna in sapien. Quisque non rhoncus libero. Vestibulum eu mi nec mauris ornare tempus non tincidunt odio. Ut malesuada elit non tincidunt finibus. 
+              Morbi eleifend mi mollis commodo dapibus. Donec sodales purus magna, sit amet tempus sapien suscipit nec.
+              Mauris id purus dolor. Sed feugiat suscipit purus, quis ultrices nunc vulputate vitae. Suspendisse id lorem sit amet justo eleifend maximus.
+            </p>
+          </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="js/firebase_config.js"></script>
+  </body>
+</html>
