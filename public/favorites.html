@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title>My favorite recipes</title>
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+
+<script>
+
+</script>
+
+  
+  </head>
+  <body>
+    <header>
+      <div class="logo_container"></div>
+      <nav class="desktop_menu">
+        <ul class="topnav">
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#news">Post a recipe</a></li>
+          <li><a href="#contact">My favorites</a></li>
+          <li class="right"><a href="#about">About Us</a></li>
+        </ul>
+        
+      </nav>
+      <div class="login_register">
+        <p><span>Login</span> | <span>Register</span></p>
+      </div>
+
+    </header>
+    <main>
+      <div class="main-container">
+        <h1>My favorite Recipes</h1>
+          <div class="recipe-container-favorite">
+              <div class="favorite-wrap">
+                <div class="image-recipe-favorite"></div>
+                <div class="description-favorite">
+                  <div class="recipe-info-favorite">
+                    <h3 class="recipe_name-favorite">Recipe name</h3>
+                    <p class="recipe_author-favorite">Made by Somebody</p>
+                  </div>
+                  <div class="recipe-details-favorite">
+                    <div class="recipe-difficulty-favorite">
+                      <img class="detail_image-favorite" src="img/difficulty.png"/>
+                      <p class="detail_text-favorite">Easy</p>
+                    </div>
+                    <div class="recipe-time-favorite">
+                      <img class="detail_image-favorite" src="img/time.png" />
+                      <p class="detail_text-favorite">30 min</p>
+                    </div> 
+                  </div>
+                </div>
+                <div class="delete-favorite">
+                </div>
+              </div>
+          </div>
+       </div>
+
+    
+      
+      
+    </main>
+    <footer></footer>
+
+
+
+    <script src="js/firebase_config.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title>My favorite recipes</title>
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+
+<script>
+
+</script>
+
+  
+  </head>
+  <body>
+    <header>
+      <div class="logo_container"></div>
+      <nav class="desktop_menu">
+        <ul class="topnav">
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#news">Post a recipe</a></li>
+          <li><a href="#contact">My favorites</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+        
+      </nav>
+      <div class="login_register">
+        <p><span>Login</span> | <span>Register</span></p>
+      </div>
+
+    </header>
+    <main>
+      <div class="main-container">
+        <h1>Create a new recipe</h1>
+          <div class="recipe-creating">
+            <div class="recipe-image"></div>
+            <form>
+              <label for="rname">Recipe name:</label><br>
+              <input type="text" id="rname" name="rname"><br>
+              <label >Ingridients:</label><br>
+              <button type="button">+</button><input type="text" class="ingridient"><br>
+              <label for="difficulty">Difficulty:</label><br>
+              <input list="difficulties" name="difficulty" id="difficulty"><br>
+              <datalist id="difficulties">
+                <option value="Easy">
+                <option value="Medium">
+                <option value="Hard">
+              </datalist>
+              <label >Time to cook this recipe:</label><br>
+              <label for="hours">Hours:</label>
+              <input type="number" id="hours" name="hours">
+              <label for="minutes">Minutes:</label>
+              <input type="number" id="minutes" name="minutes"><br>
+              <label for="rname">How to do:</label><br>
+              <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+              <button type="button">Submit</button>
+            </form>
+          </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="js/firebase_config.js"></script>
+  </body>
+</html>
