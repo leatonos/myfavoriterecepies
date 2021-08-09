@@ -21,9 +21,15 @@
 
   //This is how we add data
 
-  /*
-    db.collection("Recepies").add({
-       recipeName: "Italian Pasta"
+  function addNewRecipe(name,dif,ingridientsArray,photoLink,timeItTakes,howToMakeit){
+
+      db.collection("Recepies").add({
+        recipeName: name,
+        difficulty:dif,
+        ingridients:ingridientsArray,
+        recipePhoto:photoLink,
+        time:timeItTakes,
+        howToDo:howToMakeit
     })
     .then((docRef) => {
         console.log("Document written with ID: ", docRef.id);
@@ -32,22 +38,30 @@
         console.error("Error adding document: ", error);
     });
 
-  */
+  }
+
+    
+
+  
 
   //This is how to retrieve information from Database
+/*
   db.collection("Recepies").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
 
-      /*
+      
         console.log(`${doc.id} => ${doc.data()}`);
         console.log(`${doc.get("recipeName")}`);
         console.log(`${doc.get("difficulty")}`);
         console.log(`${doc.get("howToDo")}`);
         console.log(doc.get("ingridients"));
         console.log(`${doc.get("time")}`);
-      */
+      
 
-        console.log(doc.data());
+        //console.log(doc.data());
+
         
     });
   });
+
+*/

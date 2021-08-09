@@ -1,0 +1,51 @@
+$(document).ready(function(){
+
+    var recipe;
+    db.collection("Recepies").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+    
+          /*
+            console.log(`${doc.id} => ${doc.data()}`);
+            console.log(`${doc.get("recipeName")}`);
+            console.log(`${doc.get("difficulty")}`);
+            console.log(`${doc.get("howToDo")}`);
+            console.log(doc.get("ingridients"));
+            console.log(`${doc.get("time")}`);
+          */
+    
+            recipe = doc.data();
+
+            
+
+            console.log(doc.data());
+
+            $(".recipe-container").append(
+            
+            '<div>'+
+                '<div class="image-recipe" style="background-image: url('+ recipe.recipePhoto +')"></div>'+
+                '<div class="description">'+
+                  '<div class="recipe-info">'+
+                    '<h3 class="recipe_name">'+recipe.recipeName+'</h3>'+
+                    '<p class="recipe_author">Made by '+ recipe.author +'</p>'+
+                  '</div>'+
+                  '<div class="recipe-details">'+
+                    '<div class="recipe-difficulty">'+
+                        '<img class="detail_image" src="img/difficulty.png"/>'+
+                        '<p class="detail_text">'+ recipe.difficulty +'</p>'+
+                    '</div>'+
+                    '<div class="recipe-time">'+
+                        '<img class="detail_image" src="img/time.png" />'+
+                        '<p class="detail_text">'+ recipe.time +'</p>'+
+                    '</div>'+
+                  '</div>'+
+                '</div>'+
+            '</div>'
+
+            );
+    
+            
+        });
+      });
+
+
+});
