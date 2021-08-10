@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Profile Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style1.css" rel="stylesheet" >
+  <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <nav>
+ <input type="checkbox" id="check">
+<label for="check" class="checkbtn">
+  <i class="fas fa-bars"></i>
+</label>
+    <label class="logo"><img src="img/logo.png"></label>
+
+    <ul>
+      <li><a class="active" href="#">Recepies</a></li>
+       <li><a href="#">Post a recipe</a></li>
+        <li><a href="#">My favourites</a></li>
+         <li><a href="#">About Us</a></li>
+
+    </ul>
+
+  </nav>
+  <div class="container">
+<div class="row">
+  <div class="column"><div class="wrapper">
+
+       <img id="blah" src="img/1.jpg" alt="your image" />
+       <input type='file' style="display:none;" id="file" onchange="readURL(this);" />
+       <label for="file"><i style="	margin-left: -20px;
+       	background: pink;
+         display: inline-block;
+         border-radius: 60px;
+         box-shadow: 0px 0px 2px #888;
+         padding: 0.5em 0.6em;"class="fas fa-camera icon-2x"></i></label>
+
+
+  </div>
+
+</div>
+  <div class="column"><h2 style="margin-bottom:60px;">My Profile</h2>
+<h3 style="margin-bottom:40px;">Username</h3>
+<h3 style="margin-bottom:40px;">Email</h3>
+<h3 style="color:blue;">Change Password</h3>
+  </div>
+</div></div>
+
+
+
+
+
+
+<main>
+
+
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+<h3 style="text-align:center;">My Recipes</h3>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  src="img/1.jpg">
+
+            <div class="card-body">
+              <div class="row">
+                <div class="column">
+            <h5>Recipe Name</h5>
+
+            <p>By Somebody</p></div>
+            <div class="column">
+
+
+</div></div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  src="img/2.jpg">
+
+            <div class="card-body">
+              <div class="row">
+                <div class="column">
+            <h5>Recipe Name</h5>
+
+            <p>By Somebody</p></div>
+            <div class="column">
+
+
+
+</div></div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  src="img/3.jpg">
+
+            <div class="card-body">
+              <div class="row">
+                <div class="column">
+            <h5>Recipe Name</h5>
+
+            <p>By Somebody</p></div>
+            <div class="column">
+
+
+
+</div></div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  src="img/4.jpg">
+
+            <div class="card-body">
+              <div class="row">
+                <div class="column">
+            <h5>Recipe Name</h5>
+
+            <p>By Somebody</p></div>
+            <div class="column">
+
+
+</div></div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  src="img/5.jpg">
+
+            <div class="card-body">
+              <div class="row">
+                <div class="column">
+            <h5>Recipe Name</h5>
+
+            <p>By Somebody</p></div>
+            <div class="column">
+
+
+
+</div></div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  src="img/6.jpg">
+
+            <div class="card-body">
+              <div class="row">
+                <div class="column">
+            <h5>Recipe Name</h5>
+
+            <p>By Somebody</p></div>
+            <div class="column">
+
+
+
+</div></div>
+
+            </div>
+          </div>
+        </div>
+
+</main>
+<script>
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+</body>
+
+</html>
