@@ -4,8 +4,10 @@ $(document).ready(function(){
     db.collection("Recepies").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
     
-          /*
-            console.log(`${doc.id} => ${doc.data()}`);
+          
+           
+         /*
+            console.log(doc.id);
             console.log(`${doc.get("recipeName")}`);
             console.log(`${doc.get("difficulty")}`);
             console.log(`${doc.get("howToDo")}`);
@@ -15,13 +17,12 @@ $(document).ready(function(){
     
             recipe = doc.data();
 
-            
-
             console.log(doc.data());
 
             $(".recipe-container").append(
             
             '<div>'+
+                '<a href="recipe.html?id='+doc.id+'">'+
                 '<div class="image-recipe" style="background-image: url('+ recipe.recipePhoto +')"></div>'+
                 '<div class="description">'+
                   '<div class="recipe-info">'+
@@ -39,13 +40,17 @@ $(document).ready(function(){
                     '</div>'+
                   '</div>'+
                 '</div>'+
+                '</a>'+
             '</div>'
-
             );
     
             
         });
       });
 
+
+      
+
+     
 
 });
