@@ -29,7 +29,6 @@ $(document).ready(function(){
     const auth = firebase.auth();
 
     const googleProvider = new firebase.auth.GoogleAuthProvider();
-    const EmailProvider = new firebase.auth.
 
     //Login with google
     $("#loginGoogle").on("click",function(){
@@ -42,7 +41,7 @@ $(document).ready(function(){
       let email = $("#newUser_email").val();
       let password = $("#newUser_password").val();
 
-      firebase.auth().createUserWithEmailAndPassword(email, password)
+      auth.createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
           // Signed in 
           var user = userCredential.user;
