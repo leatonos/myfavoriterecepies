@@ -429,6 +429,19 @@ input[type=text],[type=password] {
     border-radius: 4px;
     cursor: pointer;
   }
+
+  #small_profile_pic{
+    float: left;
+    width: 40px;
+    margin-top: 9px;
+    display: none;
+  }
+
+  #small_userName{
+    float: left;
+    padding-left: 10px;
+    display: none;
+  }
   
   input[type=submit]:hover {
     background-color: #45a049;

@@ -39,6 +39,21 @@
     });
 
   }
+
+  function addUser(userName,id){
+
+    db.collection("Users").doc(id).set({
+      name: userName
+      })
+      .then(() => {
+          console.log("User successfully created!");
+      })
+      .catch((error) => {
+          console.error("Error writing user: ", error);
+      });
+  }
+
+
   //This is how to retrieve information from Database
 /*
   db.collection("Recepies").get().then((querySnapshot) => {

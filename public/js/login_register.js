@@ -44,7 +44,10 @@ $(document).ready(function(){
       auth.createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
           // Signed in 
-          var user = userCredential.user;
+          let user = userCredential.user;
+          console.log(user);
+          checkUserStatus(user);
+          
         })
         .catch((error) => {
           var errorCode = error.code;
@@ -53,18 +56,42 @@ $(document).ready(function(){
 
     });
 
-  //Login in with email
-/*
-  firebase.auth().signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-  });
- */
+    $("#loginEmail").on("click", function(){
+
+      let email = $("#login_email").val();
+      let password = $("#login_password").val();
+
+      auth.signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in
+        let user = userCredential.user;
+        checkUserStatus(user);
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
+     
+    });
+
+    function checkUserStatus(user){
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+
+          var uid = user.uid;
+
+          $("#small_userName").text()
+          $("#small_profile_pic")
+
+
+          // ...
+        } else {
+          // User is signed out
+          // ...
+        }
+      });
+    }
 
 });
