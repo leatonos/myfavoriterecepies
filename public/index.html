@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile_style.css">
     <title>My favorite recipes</title>
 
    <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -50,17 +51,27 @@
     </div>
     <header>
       <div class="logo_container"><img src="img/logo.png"></div>
-      <nav class="desktop_menu">
+      <div class="hamburger_container mobile">
+        <div class="mobile hamburger_btn">
+          <div class="menubar"></div>
+          <div class="menubar"></div>
+          <div class="menubar"></div>
+        </div>
+    </div>
+      <nav class="menu">
         <ul class="topnav">
           <li><a href="about_us.html">About Us</a></li>
           <li><a href="favorites.html">My favorites</a></li>
           <li><a href="create_recipe.html">Post a recipe</a></li>
           <li><a href="index.html">Home</a></li>
+          <li><a id="mobile_login" class="mobile">Login</a></li>
+          <li><a id="mobile_register" class="mobile">Home</a></li>
         </ul>
       </nav>
-      <div class="login_register">
+      <div class="login_register not_mobile">
         <p><span id="login_bnt">Login</span> | <span id="register_btn">Register</span></p>
       </div>
+      
     </header>
     <main>
       <div class="main-container">
@@ -88,6 +99,7 @@
     <script src="js/firebase_config.js"></script>
     <script src="js/index.js"></script>
     <script src="js/login_register.js"></script>
+    <script src="js/responsive_interactions.js"></script>
 
   </body>
 </html>

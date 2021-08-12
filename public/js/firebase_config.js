@@ -39,14 +39,6 @@
     });
 
   }
-
-    
-  //Login Btn
-
-  
-
-  
-
   //This is how to retrieve information from Database
 /*
   db.collection("Recepies").get().then((querySnapshot) => {
