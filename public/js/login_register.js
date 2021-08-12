@@ -36,23 +36,23 @@ $(document).ready(function(){
         auth.signInWithPopup(googleProvider);
     });
 
+    //Creating account with email and password
+    $("#create_account").on("click", function(){
 
-    //Creating account with email
-    
-    /*
-    
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    // Signed in 
-    var user = userCredential.user;
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    
-  });
-    
-    */
+      let email = $("#newUser_email").val();
+      let password = $("#newUser_password").val();
+
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Signed in 
+          var user = userCredential.user;
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+       });
+
+    });
 
   //Login in with email
 /*
