@@ -25,8 +25,6 @@ docRef.get().then((doc) => {
         
         thisRecipe.ingridients.forEach(getIngridients);
         
-
-
     } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");

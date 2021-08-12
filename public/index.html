@@ -15,16 +15,41 @@
 
 <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
-
-<script>
-
-</script>
-
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
   
   </head>
   <body>
+    <div id="shadowBG">
+    </div>
+    <div id="login_box">
+      <form id="login_form" action="">
+        <h2>Login</h2>
+        <label for="login_email">Email</label>
+        <input type="text" id="login_email" name="login" placeholder="Your name...">
+    
+        <label for="login_password">Password</label>
+        <input type="password" id="login_password" name="password" placeholder="Your last name...">
+      
+        <input type="button" value="Submit">
+      </form>
+      <form id="register_form" action="">
+        <h2>Create your account</h2>
+
+        <label for="newUser_name">Name</label>
+        <input type="text" id="newUser_name" name="userName" placeholder="Your name...">
+
+        <label for="newUser_email">Email</label>
+        <input type="text" id="login_email" name="firstname" placeholder="Your email...">
+    
+        <label for="newUser_password">Password</label>
+        <input type="password" id="login_password" name="lastname" placeholder="Password">
+      
+        <input type="button" value="Create Account">
+        <input type="button" id="loginGoogle" value="Login with Google">
+      </form>
+    </div>
     <header>
-      <div class="logo_container"></div>
+      <div class="logo_container"><img src="img/logo.png"></div>
       <nav class="desktop_menu">
         <ul class="topnav">
           <li><a href="about_us.html">About Us</a></li>
@@ -32,10 +57,9 @@
           <li><a href="create_recipe.html">Post a recipe</a></li>
           <li><a href="index.html">Home</a></li>
         </ul>
-        
       </nav>
       <div class="login_register">
-        <p><span>Login</span> | <span>Register</span></p>
+        <p><span id="login_bnt">Login</span> | <span id="register_btn">Register</span></p>
       </div>
     </header>
     <main>
@@ -53,17 +77,17 @@
               
           </div>
        </div>
-
-    
-      
-      
     </main>
-    <footer></footer>
+
+    <footer>
+
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/firebase_config.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/login_register.js"></script>
 
   </body>
 </html>

@@ -15,57 +15,46 @@
 
 <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
-</head>
-<body>
-<header>
-    <div class="logo_container"></div>
-    <nav class="desktop_menu">
-    <ul class="topnav">
-        <li><a href="about_us.html">About Us</a></li>
-        <li><a href="favorites.html">My favorites</a></li>
-        <li><a href="create_recipe.html">Post a recipe</a></li>
-        <li><a href="index.html">Home</a></li>
-    </ul>
-    </nav>
-
-    <div class="login_register">
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo_container"></div>
+      <nav class="desktop_menu">
+        <ul class="topnav">
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="favorites.html">My favorites</a></li>
+          <li><a href="create_recipe.html">Post a recipe</a></li>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+      <div class="login_register">
         <p><span>Login</span> | <span>Register</span></p>
       </div>
     </header>
-
-
     <main>
       <div class="main-container">
         <h1 style="text-align: center;"></h1>
         <div id="recipe_image" class="image-recipe recipe-page"></div>
           <div class="recipe-info-container">
             <div class="ingridients">
-
-          <br>
-          <br>
-
-              <h2>Ingridients: </h2>
+              <h2>Ingridients</h2>
               <ul id="ingridients_list">
               </ul>
             </div>
             <div class="recipe-details-single">
               <div class="recipe-detail-single">
                 <img class="detail_image-single" src="img/difficulty.png"/>
-                <p class="detail_text-single">Easy</p>
+                <p id="diff" class="detail_text-single">Easy</p>
               </div>
               <div class="recipe-detail-single">
                 <img class="detail_image-single" src="img/time.png" />
-                <p class="detail_text-single">30 min</p>
+                <p id="timePrep" class="detail_text-single">30 min</p>
               </div> 
             </div>
           </div>
           <div class="howtodo_container">
-
-
-          <br>
-          <br>
- 
-            <h2>How To Do: </h2>
+            <h2>How to do</h2>
             <p id="howtodo_text">
             </p>
           </div>

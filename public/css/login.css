@@ -5,14 +5,15 @@ body{
     box-sizing: border-box;
     
 }
+
 .full-page
 {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(background.jpg);
+    /* background-image: url(background.jpg); */
     background-position: center;
     background-size: cover;
-    position: absolute;
+    /* position: absolute; */
 
 }
 h3{
@@ -73,18 +74,22 @@ a{
 }
 #login-form
 {
-    display: none;
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .form-box
 {
-    width: 380px;
-    height: 480px;
+    /* width: 100%; */
+    height: 50vh;
     position: relative;
     margin: 2% auto;
     background: rgba(0,0,0,0.3);
     padding: 10px;
     overflow: hidden;
-}
+} 
+
 .button-box
 {
     width: 220px;
@@ -95,36 +100,49 @@ a{
 }
 .toggle-btn
 {
-    padding:10px 30px;
+    padding: 1rem 2rem;
     cursor: pointer;
     background: transparent;
     border: 0;
     outline: none;
     position: relative;
+
 }
 #btn
 {
     top: 0;
     left: 0;
     position:absolute;
-    width: 110px;
+    width: 7.5rem;
     height: 100%;
     background: #F3C693;
-    border-radius: 30px;
+    border-radius: 5rem;
     transition: .5s;
+}
+
+.rem {
+    margin-top: 1em;
+}
+
+.form {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    /* height: 60vh; */
+    text-align: center;
 }
 .input-group-login
 {
     top: 150px;
-    position: absolute;
-    width: 280px;
+    /* position: absolute; */
+    /* width: 280px; */
     transition: .5s;
 }
 .input-group-register
 {
     top: 120px;
-    position:absolute;
-    width: 280px;
+    /* position:absolute; */
+    /* width: 280px; */
     transition: .5s;
 }
 .input-field
@@ -153,14 +171,14 @@ a{
 }
 .check-box
 {
-    margin: 30px 10px 34px 0;
+    margin: 1em auto;
 }
 span
 {
     color: #777;
     font-size: 12px;
-    bottom: 68px;
-    position: absolute;
+    /* bottom: 68px;
+    position: absolute; */
 }
 #login
 {
