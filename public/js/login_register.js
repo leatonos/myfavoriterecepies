@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+      var userEmail;
+      var userPassword;
+      var userName; 
+
 
     //Shows Login form
     $("#login_bnt").on("click",function(){
@@ -38,14 +42,17 @@ $(document).ready(function(){
     //Creating account with email and password
     $("#create_account").on("click", function(){
 
-      let email = $("#newUser_email").val();
-      let password = $("#newUser_password").val();
+      userEmail = $("#newUser_email").val();
+      userPassword = $("#newUser_password").val();
+      userName = $("#newUser_name").val();
 
       auth.createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
           // Signed in 
           let user = userCredential.user;
-          console.log(user);
+          console.log(user.uid);
+
+          addUser(userName,user.uid);
           checkUserStatus(user);
           
         })
@@ -58,8 +65,9 @@ $(document).ready(function(){
 
     $("#loginEmail").on("click", function(){
 
-      let email = $("#login_email").val();
-      let password = $("#login_password").val();
+      userEmail = $("#login_email").val();
+      userPassword = $("#login_password").val();
+      
 
       auth.signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
@@ -75,6 +83,11 @@ $(document).ready(function(){
     });
 
     function checkUserStatus(user){
+
+      clearInternalDatabase();
+      saveData(user.uid,userName,userEmail)
+
+
       auth.onAuthStateChanged((user) => {
         if (user) {
           // User is signed in, see docs for a list of available properties
@@ -82,8 +95,9 @@ $(document).ready(function(){
 
           var uid = user.uid;
 
-          $("#small_userName").text()
-          $("#small_profile_pic")
+          $("#small_userName").text();
+          $("#small_userName").show()
+          $("#small_profile_pic").show();
 
 
           // ...
