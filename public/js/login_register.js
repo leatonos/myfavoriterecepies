@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+      checkInternalStorage();
+
       var userEmail;
       var userPassword;
       var userName; 
@@ -51,15 +53,15 @@ $(document).ready(function(){
           // Signed in 
           let user = userCredential.user;
           console.log(user.uid);
-
+          
+          //Saves user info in the database
           addUser(userName,user.uid);
-          localStorage.setItem("userId", user.uid);
+          //Saves info in Internal Storage
+          saveInternalUser(user.uid,userName);
           clearInternalDatabase();
-          saveData(user.uid,userName,userEmail)
-
+          showLoginInfo();
           checkUserStatus(user);
 
-          
         })
         .catch((error) => {
           var errorCode = error.code;
@@ -89,22 +91,11 @@ $(document).ready(function(){
 
     function checkUserStatus(user){
 
-      console.log("Executed")
-
       auth.onAuthStateChanged((user) => {
         if (user) {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
-
           var uid = user.uid;
-
-          $("#login_register_area").hide();
-
-          $("#small_userName").text();
-          $("#small_userName").show()
-          $("#small_profile_pic").show();
-          readData();
-
         } else {
          
         }
@@ -115,11 +106,29 @@ $(document).ready(function(){
     function logOffScreen(){
 
       $("#small_userName").text("");
-      $("#small_userName").hide()
+      $("#small_userName").hide();
       $("#small_profile_pic").hide();
 
       $("#login_register_area").show();
       
+    }
+
+    function showLoginInfo(){
+
+      $("#small_userName").text(getInternalUsername());
+      $("#small_userName").show();
+      $("#small_profile_pic").show();
+
+      $("#login_register_area").hide();
+      
+    }
+
+    function checkInternalStorage(){
+      if(getInternalUserId == "" || getInternalUserId == null){
+        logOffScreen();
+      }else{
+        showLoginInfo();
+      }
     }
 
 });

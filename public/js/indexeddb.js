@@ -78,3 +78,31 @@ function clearInternalDatabase(){
     objectStoreRequest.onsuccess = function(event) {
     };
 }
+
+
+function saveInternalUser(id,name){
+    localStorage.setItem("userId", id);
+    localStorage.setItem("userName", name);
+    localStorage.setItem("Status","logged");
+}
+
+function getInternalUsername(){
+    let username = localStorage.getItem("userName");
+    return username;
+}
+
+function getInternalUserId(){
+    let userId = localStorage.getItem("userId");
+    return userId;
+}
+
+function getInternalUserId(){
+    let userStatus = localStorage.getItem("Status");
+    return userStatus;
+}
+
+function clearInternalStorage(){
+    localStorage.setItem("userId", "");
+    localStorage.setItem("userName", "");
+    localStorage.setItem("Status","");
+}
