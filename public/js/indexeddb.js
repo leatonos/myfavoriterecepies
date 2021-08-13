@@ -80,10 +80,16 @@ function clearInternalDatabase(){
 }
 
 
-function saveInternalUser(id,name){
+function saveInternalUser(id,name,email){
     localStorage.setItem("userId", id);
     localStorage.setItem("userName", name);
+    localStorage.setItem("userEmail", email);
     localStorage.setItem("Status","logged");
+}
+
+function getInternalUsername(){
+    let username = localStorage.getItem("userName");
+    return username;
 }
 
 function getInternalUsername(){
@@ -96,6 +102,11 @@ function getInternalUserId(){
     return userId;
 }
 
+function getInternalUserEmail(){
+    let userEmail = localStorage.getItem("userEmail");
+    return userEmail;
+}
+
 function getInternalUserStatus(){
     let userStatus = localStorage.getItem("Status");
     return userStatus;
@@ -104,5 +115,6 @@ function getInternalUserStatus(){
 function clearInternalStorage(){
     localStorage.setItem("userId", "");
     localStorage.setItem("userName", "");
+    localStorage.setItem("userEmail", "");
     localStorage.setItem("Status","");
 }

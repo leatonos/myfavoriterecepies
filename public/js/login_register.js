@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-      checkInternalStorage();
 
       var userEmail;
       var userPassword;
@@ -57,8 +56,7 @@ $(document).ready(function(){
           //Saves user info in the database
           addUser(userName,user.uid);
           //Saves info in Internal Storage
-          saveInternalUser(user.uid,userName);
-          clearInternalDatabase();
+          saveInternalUser(user.uid,userName,userEmail);
           showLoginInfo();
           checkUserStatus(user);
 
@@ -72,20 +70,20 @@ $(document).ready(function(){
 
     $("#loginEmail").on("click", function(){
 
-      userEmail = $("#login_email").val();
-      userPassword = $("#login_password").val();
-      
+        userEmail = $("#login_email").val();
+        userPassword = $("#login_password").val();
+        
 
-      auth.signInWithEmailAndPassword(userEmail, userPassword)
-      .then((userCredential) => {
-        // Signed in
-        let user = userCredential.user;
-        checkUserStatus(user);
-      })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-      });
+        auth.signInWithEmailAndPassword(userEmail, userPassword)
+        .then((userCredential) => {
+          // Signed in
+          let user = userCredential.user;
+          checkUserStatus(user);
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+        });
      
     });
 
@@ -131,5 +129,7 @@ $(document).ready(function(){
         showLoginInfo();
       }
     }
+
+    checkInternalStorage();
 
 });
