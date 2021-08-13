@@ -36,7 +36,28 @@ $(document).ready(function(){
 
     //Login with google
     $("#loginGoogle").on("click",function(){
-        auth.signInWithPopup(googleProvider);
+        auth.signInWithPopup(googleProvider)
+        .then((result) => {
+          /** @type {firebase.auth.OAuthCredential} */
+          var credential = result.credential;
+      
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          var token = credential.accessToken;
+          // The signed-in user info.
+          var user = result.user;
+          console.log("Google Login");
+          console.log(user);
+         
+        }).catch((error) => {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // ...
+        });
     });
 
     //Creating account with email and password
@@ -73,7 +94,6 @@ $(document).ready(function(){
         userEmail = $("#login_email").val();
         userPassword = $("#login_password").val();
         
-
         auth.signInWithEmailAndPassword(userEmail, userPassword)
         .then((userCredential) => {
           // Signed in
