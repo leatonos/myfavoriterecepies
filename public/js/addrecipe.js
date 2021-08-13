@@ -122,7 +122,7 @@ function uploadImage(){
 
         // Set the "capital" field of the city 'DC'
         return changeRecipe.update({
-            recipePhoto: ImgName
+            recipePhoto: ImgUrl
         })
         .then(() => {
             console.log("Image updated!");
