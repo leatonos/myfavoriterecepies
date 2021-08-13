@@ -9,7 +9,6 @@ var recipeId = url.searchParams.get("id");
 
 var thisRecipe;
 
-
 var docRef = db.collection("Recepies").doc(recipeId);
 
 docRef.get().then((doc) => {
@@ -19,9 +18,9 @@ docRef.get().then((doc) => {
 
         $("h1").text(thisRecipe.recipeName);
         $("#recipe_image").css("background-image", "url("+thisRecipe.recipePhoto+")");
-        $("howtodo_text").text(thisRecipe.howToDo);
-        $("diff").text(thisRecipe.difficulty);
-        $("timePrep").text(thisRecipe.time);
+        $("#howtodo_text").text(thisRecipe.howToDo);
+        $("#diff").text(thisRecipe.difficulty);
+        $("#timePrep").text(thisRecipe.time);
         
         thisRecipe.ingridients.forEach(getIngridients);
         
