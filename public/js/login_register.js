@@ -72,12 +72,13 @@ $(document).ready(function(){
 
         userEmail = $("#login_email").val();
         userPassword = $("#login_password").val();
-        userName = getUserFromId(user.uid);
+        
 
         auth.signInWithEmailAndPassword(userEmail, userPassword)
         .then((userCredential) => {
           // Signed in
           let user = userCredential.user;
+          userName = getUserFromId(user.uid);
           saveInternalUser(user.uid, userName, userEmail);
           showLoginInfo();
           $("#shadowBG,#login_box,#login_form,#register_form").fadeOut();
