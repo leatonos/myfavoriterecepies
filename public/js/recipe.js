@@ -36,7 +36,15 @@ docRef.get().then((doc) => {
 //Loads ingridients
 function getIngridients(item, index) {
     $("#ingridients_list").append("<li>"+item+"</li>");
-  }
+}
+
+//Add favorite
+$("#fav_btn").click(function(){
+
+    addAsFavorite(recipeId)
+    $("#fav_btn").fadeOut();
+
+});
 
 
 });

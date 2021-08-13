@@ -119,8 +119,26 @@ function getInternalUserStatus(){
 }
 
 function clearInternalStorage(){
-    localStorage.setItem("userId", "");
+    localStorage.getItem("favorites");
     localStorage.setItem("userName", "");
     localStorage.setItem("userEmail", "");
     localStorage.setItem("Status","");
+}
+
+function addAsFavorite(recipeId){
+    let arr  = {recipesIds:[recipeId]};
+    let favs = localStorage.getItem("favorites");
+
+    if(favs == "" || favs == null){
+        localStorage.setItem("favorites", JSON.stringify(arr));
+    }else{
+        let list = JSON.parse(favs);
+        list.recipesIds.push(recipeId)
+        localStorage.setItem("favorites", JSON.stringify(list));
+    }
+}
+
+function getFavorites(){
+    let favorites = localStorage.getItem("favorites");
+    return JSON.parse(favorites);
 }

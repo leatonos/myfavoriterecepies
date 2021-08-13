@@ -171,6 +171,7 @@ $(document).ready(function(){
 
     function getUserFromId(userId){
 
+      console.log(userId);
       let userName;
       var docRef = db.collection("Users").doc(userId);
 

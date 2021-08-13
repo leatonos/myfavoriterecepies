@@ -496,3 +496,7 @@ input[type=text],[type=password],#difficulty {
       color: blue;
       cursor: pointer;
   }
+  #fav_btn{
+      text-align: left;
+      cursor: pointer;
+  }
