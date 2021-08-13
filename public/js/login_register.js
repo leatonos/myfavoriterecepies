@@ -53,7 +53,15 @@ $(document).ready(function(){
           console.log(user.uid);
 
           addUser(userName,user.uid);
+          localStorage.setItem("userId", user.uid);
+          clearInternalDatabase();
+          saveData(user.uid,userName,userEmail)
+
+          
+
+          
           checkUserStatus(user);
+
           
         })
         .catch((error) => {
@@ -85,12 +93,6 @@ $(document).ready(function(){
     function checkUserStatus(user){
 
       console.log("Executed")
-
-      clearInternalDatabase();
-      saveData(user.uid,userName,userEmail)
-
-      localStorage.setItem("userId", user.uid);
-
 
       auth.onAuthStateChanged((user) => {
         if (user) {
