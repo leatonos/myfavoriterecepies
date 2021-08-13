@@ -104,11 +104,16 @@ $(document).ready(function(){
         .then((userCredential) => {
           // Signed in
           let user = userCredential.user;
-          userName = getUserFromId(user.uid);
-          console.log(userName);
-          saveInternalUser(user.uid, userName, userEmail);
-          showLoginInfo();
-          $("#shadowBG,#login_box,#login_form,#register_form").fadeOut();
+
+          setInterval(function(){
+            userName = getUserFromId(user.uid);
+            console.log(userName);
+            saveInternalUser(user.uid, userName, userEmail);
+            showLoginInfo();
+            $("#shadowBG,#login_box,#login_form,#register_form").fadeOut();
+           }, 2000);
+
+          
           checkUserStatus(user);
         })
         .catch((error) => {
