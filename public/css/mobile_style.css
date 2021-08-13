@@ -74,4 +74,27 @@
     .recipe-container > div {
         width: 80%; 
     }
+    .recipe-details-single,.ingridients{
+        width: 100%;
+    }
+
+    .image-recipe-favorite{
+        width: 40%;
+        height: 170px;
+    }
+    .recipe-info-favorite{
+        width: 100%;
+    }
+
+    .recipe-details-favorite{
+        margin-top:0;
+        width: 100%;
+    }
+
+    .recipe-container-favorite > div{
+        width: 100%;
+        margin: 0;
+    }
+
+    .delete-favorite{display: none;}
 }
