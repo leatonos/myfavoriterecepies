@@ -474,6 +474,10 @@ input[type=text],[type=password],#difficulty {
     display: none;
   }
 
+  #user_top_corner{
+      display: none;
+  }
+
   #small_userName{
     float: left;
     padding-left: 10px;
