@@ -47,6 +47,9 @@ $(document).ready(function(){
           var user = result.user;
           console.log("Google Login");
           console.log(user);
+
+          saveInternalUser(user.uid,user.displayName,user.email);
+
          
         }).catch((error) => {
           // Handle Errors here.
@@ -99,6 +102,7 @@ $(document).ready(function(){
           // Signed in
           let user = userCredential.user;
           userName = getUserFromId(user.uid);
+          console.log(userName);
           saveInternalUser(user.uid, userName, userEmail);
           showLoginInfo();
           $("#shadowBG,#login_box,#login_form,#register_form").fadeOut();
