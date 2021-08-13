@@ -20,7 +20,7 @@ for (var id in favObj){
                 
                 '<div class="favorite-wrap">'+
                 '<a href="recipe.html?id='+doc.id+'">'+
-                '<div class="image-recipe-favorite" style="'+doc.data().recipePhoto+'"></div>'+
+                '<div class="image-recipe-favorite" style="background-image: url('+doc.data().recipePhoto+')"></div>'+
                 '</a>'+
                 '<div class="description-favorite">'+
                 '<div class="recipe-info-favorite">'+
