@@ -79,6 +79,7 @@ function clearInternalDatabase(){
     };
 }
 
+//We are only using this code below:
 
 function saveInternalUser(id,name,email){
     localStorage.setItem("userId", id);

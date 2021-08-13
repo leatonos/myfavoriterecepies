@@ -73,7 +73,10 @@
         </ul>
       </nav>
       <div class="login_register not_mobile">
-        <p><span id="login_bnt">Login</span> | <span id="register_btn">Register</span></p>
+        <a href="my_profile.html">
+          <p id="login_register_area"><span id="login_bnt">Login</span> | <span id="register_btn">Register</span></p>
+          <img id="small_profile_pic" src="img/profile-user.png"><p id="small_userName"></p>
+        </a>
       </div>
       
     </header>
@@ -85,26 +88,16 @@
             <div class="profile-image"></div>
           </div>
           <div class="profile-details">
-            <p>Username</p>
-            <p>Email</p>
+            <p id="userNameProfile"></p>
+            <p id="emailProfile"></p>
+            <p id="logOffbtn">Log off</p>
           </div>
         </div>
         
 
         <h2 style="text-align: center;">My Recipes</h2>
           <div class="recipe-container-profile">
-              <div>
-                <div class="image-recipe-profile"></div>
-              </div>
-              <div>
-                <div class="image-recipe-profile"></div>
-              </div>
-              <div>
-                <div class="image-recipe-profile"></div>
-              </div>
-              <div>
-                <div class="image-recipe-profile"></div>
-              </div>
+              
           </div>
        </div>
 
@@ -116,10 +109,10 @@
 
 
 
-    <script src="js/firebase_config.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/indexeddb.js"></script>
     <script src="js/firebase_config.js"></script>
-    <script src="js/login_register.js"></script>
+    <script src="js/myprofile.js"></script>
     <script src="js/responsive_interactions.js"></script>
     
 

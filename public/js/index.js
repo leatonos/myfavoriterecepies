@@ -4,17 +4,6 @@ $(document).ready(function(){
     db.collection("Recepies").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
     
-          
-           
-         /*
-            console.log(doc.id);
-            console.log(`${doc.get("recipeName")}`);
-            console.log(`${doc.get("difficulty")}`);
-            console.log(`${doc.get("howToDo")}`);
-            console.log(doc.get("ingridients"));
-            console.log(`${doc.get("time")}`);
-          */
-    
             recipe = doc.data();
 
             console.log(doc.data());

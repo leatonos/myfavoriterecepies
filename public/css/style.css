@@ -450,3 +450,8 @@ input[type=text],[type=password] {
   .mobile,#mobile_login,#mobile_register{
       display: none;
   }
+
+  #logOffbtn{
+      color: blue;
+      cursor: pointer;
+  }

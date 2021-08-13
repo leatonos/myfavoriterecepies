@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
       var userEmail;
       var userPassword;
       var userName; 
@@ -122,7 +121,8 @@ $(document).ready(function(){
     }
 
     function checkInternalStorage(){
-      if(getInternalUserStatus != "logged"){
+      if(getInternalUserStatus() != "logged"){
+        console.log("cannot find user")
         logOffScreen();
       }else{
         console.log("User found")
