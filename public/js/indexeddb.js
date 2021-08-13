@@ -57,9 +57,6 @@ function readData(){
      
 }
 
-
-
-
 function clearInternalDatabase(){
      // open a read/write db transaction, ready for clearing the data
   var transaction = db.transaction(["UserInfo"], "readwrite");

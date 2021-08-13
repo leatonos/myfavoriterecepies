@@ -97,19 +97,28 @@ $(document).ready(function(){
 
           var uid = user.uid;
 
+          $("#login_register_area").hide();
+
           $("#small_userName").text();
           $("#small_userName").show()
           $("#small_profile_pic").show();
           readData();
 
-
-          // ...
         } else {
-          $("#small_userName").text("");
-          $("#small_userName").hide()
-          $("#small_profile_pic").hide();
+         
         }
       });
+    }
+
+
+    function logOffScreen(){
+
+      $("#small_userName").text("");
+      $("#small_userName").hide()
+      $("#small_profile_pic").hide();
+
+      $("#login_register_area").show();
+      
     }
 
 });
