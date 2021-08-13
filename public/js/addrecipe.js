@@ -59,10 +59,21 @@ function uploadImage(){
             ImgUrl = url;
             photoLink = ImgUrl;
             console.log(photoLink);
+
           });
       
   });
 }
+
+//Upload photo btn
+$("#uploadPhoto").click(function(){
+
+    uploadImage();
+    console.log(photoLink);
+
+});
+
+
 
     //Send information to the database
     $("#create_recipe_btn").click(function(){
@@ -91,7 +102,7 @@ function uploadImage(){
             time = hours+"h "+minutes+"m"
         }
 
-        uploadImage();
+        
         console.log(ImgUrl);
         console.log(ImgName);
 
@@ -113,16 +124,16 @@ function uploadImage(){
       })
       .then((docRef) => {
           console.log("Document written with ID: ", docRef.id);
-          updatePhoto(docRef.id);
+          //updatePhoto(docRef.id);
       });
     }
 
-    function updatePhoto(id){
+    function updatePhoto(id,imageLink){
         var changeRecipe = db.collection("Recepies").doc(id);
 
         // Set the "capital" field of the city 'DC'
         return changeRecipe.update({
-            recipePhoto: ImgUrl
+            recipePhoto: imageLink
         })
         .then(() => {
             console.log("Image updated!");
