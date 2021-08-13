@@ -14,7 +14,49 @@ $(document).ready(function(){
         $(this).parent().remove();
     });
 
-    //Create array of ingridients
+
+
+    //----------------------IMAGE SELECTION PROCESS-----------------------------------------------// 
+    
+    document.getElementById("select_image").onclick = function(e){
+        var input = document.createElement('input');
+        input.type='file';
+        
+
+        input.onchange = e => {
+        files = e.target.files;
+        reader = new FileReader();
+        reader.onload = function() {
+            $("#select_image").css("background-image", "url(" + reader.result + ")");
+
+        }
+        reader.readAsDataURL(files[0]);
+        }
+        input.click();
+    }
+
+    //----------------------UPLOAD PROCESS------------------------------------------------------//     
+//----------------------UPLOADING PICTURE TO THE STORAGE------------------------------------//   
+
+function uploadImage(){
+    var uploadTask = firebase.storage().ref('Images/' +ImgName+".png").put(files[0]);
+    uploadTask.on('state_changed',function(snapshot){
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes)*100;
+        document.getElementById('UpProgress').innerHTML = 'Upload' +progress+'%';
+      },  
+      function(error){
+        alert('error in saving the image');
+      },  
+      function(){
+          uploadTask.snapshot.ref.getDownloadURL().then(function(url){
+            ImgUrl = url;
+            photoLink = ImgUrl;
+          });
+      
+  });
+}
+
+    //Send information to the database
     $("#create_recipe_btn").click(function(){
         var ingridients = [];
         var time;
@@ -28,7 +70,7 @@ $(document).ready(function(){
         let authorName = getInternalUsername();
         let authorId = getInternalUserId();
         
-        
+        //Create an array of ingridients
         $(".ingridient").each(function(i){
             let newIngridient = $(this).val();
             ingridients.push(newIngridient)
@@ -40,6 +82,8 @@ $(document).ready(function(){
         }else{
             time = hours+"h "+minutes+"m"
         }
+
+        uploadImage();
 
         addNewRecipe(recipeName,recipeDiff,ingridients,photoLink,time,howTo,authorName,authorId);
     });
