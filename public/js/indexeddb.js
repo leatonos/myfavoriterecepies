@@ -13,10 +13,6 @@ request.onerror = function(event) {
  request.onupgradeneeded = function(event) {
     var internalDB = event.target.result;
     var objectStore = internalDB.createObjectStore("user", {keyPath: "id"});
-    
-    for (var i in userData) {
-       objectStore.add(userData[i]);
-    }
  }
 
 
