@@ -84,6 +84,8 @@ $(document).ready(function(){
 
     function checkUserStatus(user){
 
+      console.log("Executed")
+
       clearInternalDatabase();
       saveData(user.uid,userName,userEmail)
 
