@@ -50,6 +50,9 @@ $(document).ready(function(){
 
           saveInternalUser(user.uid,user.displayName,user.email);
 
+          $("#shadowBG,#login_box,#login_form,#register_form").fadeOut();
+          showLoginInfo();
+
          
         }).catch((error) => {
           // Handle Errors here.
@@ -134,6 +137,7 @@ $(document).ready(function(){
       $("#small_userName").text("");
       $("#small_userName").hide();
       $("#small_profile_pic").hide();
+      $("#user_top_corner").hide();
 
       $("#login_register_area").show();
       
@@ -144,8 +148,10 @@ $(document).ready(function(){
       $("#small_userName").text(getInternalUsername());
       $("#small_userName").show();
       $("#small_profile_pic").show();
+      $("#user_top_corner").show();
 
       $("#login_register_area").hide();
+      
       
     }
 
