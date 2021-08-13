@@ -57,9 +57,6 @@ $(document).ready(function(){
           clearInternalDatabase();
           saveData(user.uid,userName,userEmail)
 
-          
-
-          
           checkUserStatus(user);
 
           
