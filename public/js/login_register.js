@@ -106,7 +106,6 @@ $(document).ready(function(){
           // Signed in
           let user = userCredential.user;
           savePartialInternalUser(user.uid, userEmail);
-          userID = user.uid;
           $("#shadowBG,#login_box,#login_form,#register_form").fadeOut();
           checkUserStatus(user);
         })
@@ -115,7 +114,7 @@ $(document).ready(function(){
           var errorMessage = error.message;
         });
      
-        setTimeout(getUserFromId(userID), 2000)
+        setTimeout(getUserFromId(getInternalUserId()), 2000)
 
 
     });
