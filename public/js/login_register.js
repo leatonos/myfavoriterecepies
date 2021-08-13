@@ -124,9 +124,10 @@ $(document).ready(function(){
     }
 
     function checkInternalStorage(){
-      if(getInternalUserId == "" || getInternalUserId == null){
+      if(getInternalUserStatus != "logged"){
         logOffScreen();
       }else{
+        console.log("User found")
         showLoginInfo();
       }
     }

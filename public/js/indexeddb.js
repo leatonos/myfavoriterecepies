@@ -96,7 +96,7 @@ function getInternalUserId(){
     return userId;
 }
 
-function getInternalUserId(){
+function getInternalUserStatus(){
     let userStatus = localStorage.getItem("Status");
     return userStatus;
 }
