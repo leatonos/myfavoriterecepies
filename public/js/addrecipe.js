@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+    var ImgName, ImgUrl;
+    var files = [];
+    var reader = new FileReader();
+    
+
     var photoLink ="https://firebasestorage.googleapis.com/v0/b/browser-project-4439b.appspot.com/o/Images%2Fdish.png?alt=media&token=da0f8715-ee7e-41d5-947c-7656131e4c30";
 
     //Add ingridient
@@ -39,10 +44,12 @@ $(document).ready(function(){
 //----------------------UPLOADING PICTURE TO THE STORAGE------------------------------------//   
 
 function uploadImage(){
-    var uploadTask = firebase.storage().ref('Images/' +ImgName+".png").put(files[0]);
+    var d = new Date();
+    var n = d.getTime();
+    ImgName = n
+    var uploadTask = firebase.storage().ref('Images/' +ImgName+".jpg").put(files[0]);
     uploadTask.on('state_changed',function(snapshot){
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes)*100;
-        document.getElementById('UpProgress').innerHTML = 'Upload' +progress+'%';
       },  
       function(error){
         alert('error in saving the image');
@@ -51,6 +58,7 @@ function uploadImage(){
           uploadTask.snapshot.ref.getDownloadURL().then(function(url){
             ImgUrl = url;
             photoLink = ImgUrl;
+            console.log(photoLink);
           });
       
   });
@@ -84,8 +92,11 @@ function uploadImage(){
         }
 
         uploadImage();
+        console.log(ImgUrl);
+        console.log(ImgName);
 
         addNewRecipe(recipeName,recipeDiff,ingridients,photoLink,time,howTo,authorName,authorId);
+        
     });
 
     function addNewRecipe(name,dif,ingridientsArray,photoLink,timeItTakes,howToMakeit,creatorName,creatorId){
@@ -102,8 +113,24 @@ function uploadImage(){
       })
       .then((docRef) => {
           console.log("Document written with ID: ", docRef.id);
-          console.error("Error adding document: ", error);
+          updatePhoto(docRef.id);
       });
+    }
+
+    function updatePhoto(id){
+        var changeRecipe = db.collection("Recepies").doc(id);
+
+        // Set the "capital" field of the city 'DC'
+        return changeRecipe.update({
+            recipePhoto: ImgName
+        })
+        .then(() => {
+            console.log("Image updated!");
+        })
+        .catch((error) => {
+            // The document probably doesn't exist.
+            console.error("Error updating document: ", error);
+        });
     }
 
 });
