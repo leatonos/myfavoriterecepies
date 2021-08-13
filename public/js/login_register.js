@@ -114,7 +114,7 @@ $(document).ready(function(){
           var errorMessage = error.message;
         });
      
-        setTimeout(getUserFromId(getInternalUserId()), 2000)
+        setTimeout(getUserFromId(), 2000)
 
 
     });
@@ -168,11 +168,11 @@ $(document).ready(function(){
 
     checkInternalStorage();
 
-    function getUserFromId(userId){
+    function getUserFromId(){
 
-      console.log(userId);
+      console.log(getInternalUserId());
       let userName;
-      var docRef = db.collection("Users").doc(userId);
+      var docRef = db.collection("Users").doc(getInternalUserId());
 
       docRef.get().then((doc) => {
           if (doc.exists) {
