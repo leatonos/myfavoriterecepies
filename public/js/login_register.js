@@ -46,7 +46,7 @@ $(document).ready(function(){
       userPassword = $("#newUser_password").val();
       userName = $("#newUser_name").val();
 
-      auth.createUserWithEmailAndPassword(email, password)
+      auth.createUserWithEmailAndPassword(userEmail, userPassword)
         .then((userCredential) => {
           // Signed in 
           let user = userCredential.user;
