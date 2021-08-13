@@ -3,6 +3,7 @@ $(document).ready(function(){
       var userEmail;
       var userPassword;
       var userName; 
+      var userID;
 
 
     //Shows Login form
@@ -104,16 +105,9 @@ $(document).ready(function(){
         .then((userCredential) => {
           // Signed in
           let user = userCredential.user;
-
-          setInterval(function(){
-            userName = getUserFromId(user.uid);
-            console.log(userName);
-            saveInternalUser(user.uid, userName, userEmail);
-            showLoginInfo();
-            $("#shadowBG,#login_box,#login_form,#register_form").fadeOut();
-           }, 2000);
-
-          
+          savePartialInternalUser(user.uid, userEmail);
+          userID = user.uid;
+          $("#shadowBG,#login_box,#login_form,#register_form").fadeOut();
           checkUserStatus(user);
         })
         .catch((error) => {
@@ -121,6 +115,9 @@ $(document).ready(function(){
           var errorMessage = error.message;
         });
      
+        setTimeout(getUserFromId(userID), 2000)
+
+
     });
 
     function checkUserStatus(user){

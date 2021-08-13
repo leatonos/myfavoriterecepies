@@ -88,6 +88,16 @@ function saveInternalUser(id,name,email){
     localStorage.setItem("Status","logged");
 }
 
+function savePartialInternalUser(id,email){
+    localStorage.setItem("userId", id);
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("Status","logged");
+}
+
+function saveUserName(name){
+    localStorage.setItem("userName", name);
+}
+
 function getInternalUsername(){
     let username = localStorage.getItem("userName");
     return username;
