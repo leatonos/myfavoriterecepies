@@ -188,7 +188,7 @@ $(document).ready(function(){
           console.log("Error getting document:", error);
       });
 
-      return username;
+      return userName;
     }
 
 });
