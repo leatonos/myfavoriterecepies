@@ -57,6 +57,7 @@ $(document).ready(function(){
           //Saves info in Internal Storage
           saveInternalUser(user.uid,userName,userEmail);
           showLoginInfo();
+          $("#shadowBG,#login_box,#login_form,#register_form").fadeOut();
           checkUserStatus(user);
 
         })
@@ -71,12 +72,15 @@ $(document).ready(function(){
 
         userEmail = $("#login_email").val();
         userPassword = $("#login_password").val();
-        
+        userName = getUserFromId(user.uid);
 
         auth.signInWithEmailAndPassword(userEmail, userPassword)
         .then((userCredential) => {
           // Signed in
           let user = userCredential.user;
+          saveInternalUser(user.uid, userName, userEmail);
+          showLoginInfo();
+          $("#shadowBG,#login_box,#login_form,#register_form").fadeOut();
           checkUserStatus(user);
         })
         .catch((error) => {
@@ -131,5 +135,27 @@ $(document).ready(function(){
     }
 
     checkInternalStorage();
+
+    function getUserFromId(userId){
+
+      let userName;
+      var docRef = db.collection("Users").doc(userId);
+
+      docRef.get().then((doc) => {
+          if (doc.exists) {
+              
+            userName = doc.data().name;
+              
+          } else {
+              // doc.data() will be undefined in this case
+              console.log("No such document!");
+              userName = "User not found"
+          }
+      }).catch((error) => {
+          console.log("Error getting document:", error);
+      });
+
+      return username;
+    }
 
 });

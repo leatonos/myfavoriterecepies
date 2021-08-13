@@ -93,11 +93,6 @@ function getInternalUsername(){
     return username;
 }
 
-function getInternalUsername(){
-    let username = localStorage.getItem("userName");
-    return username;
-}
-
 function getInternalUserId(){
     let userId = localStorage.getItem("userId");
     return userId;

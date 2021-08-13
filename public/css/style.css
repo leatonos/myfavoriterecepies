@@ -303,7 +303,7 @@ ul.topnav {
 .howtodo_container{
     float: left;
     position: relative;
-    width: 100%;
+    width: 100%
 }
 
 /* Recipes Container Profile */
@@ -409,7 +409,7 @@ ul {
     display: none;
 }
 
-input[type=text],[type=password] {
+input[type=text],[type=password],#difficulty {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -428,6 +428,43 @@ input[type=text],[type=password] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+  }
+
+  #addIngridient,#removeIngridient{
+      font-size: 22px;
+    cursor: pointer;
+    margin: 12px 2px;
+    float: left;
+    display: block;
+    border-width: 0px;
+    border-style: none;
+    width: 30px;
+    height: 30px;
+    background-color: #a3b9ff;
+    border-radius: 100%;
+    color: white;
+  }
+  #hours,#minutes{
+    width: 75px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .ingridient_container{
+      width: 100%;
+      display: inline-block;
+  }
+
+  .ingridient{
+    float: left;
+    width: calc(100% - 35px) !important;
+  }
+  #how{
+    height: 300px;
   }
 
   #small_profile_pic{
