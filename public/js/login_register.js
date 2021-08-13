@@ -69,7 +69,7 @@ $(document).ready(function(){
       userPassword = $("#login_password").val();
       
 
-      auth.signInWithEmailAndPassword(email, password)
+      auth.signInWithEmailAndPassword(userEmail, userPassword)
       .then((userCredential) => {
         // Signed in
         let user = userCredential.user;
@@ -87,6 +87,8 @@ $(document).ready(function(){
       clearInternalDatabase();
       saveData(user.uid,userName,userEmail)
 
+      localStorage.setItem("userId", user.uid);
+
 
       auth.onAuthStateChanged((user) => {
         if (user) {
@@ -98,12 +100,14 @@ $(document).ready(function(){
           $("#small_userName").text();
           $("#small_userName").show()
           $("#small_profile_pic").show();
+          readData();
 
 
           // ...
         } else {
-          // User is signed out
-          // ...
+          $("#small_userName").text("");
+          $("#small_userName").hide()
+          $("#small_profile_pic").hide();
         }
       });
     }

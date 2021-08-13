@@ -36,6 +36,48 @@ function saveData(userId,userName,userEmail){
 
 }
 
+function readData(){
+    
+        var transaction = db.transaction(["user"]);
+        var objectStore = transaction.objectStore("user");
+        var request = objectStore.get(localStorage.getItem("userId"));
+        
+        request.onerror = function(event) {
+           alert("Unable to retrieve user from internal database!");
+        };
+        
+        request.onsuccess = function(event) {
+           if(request.result) {
+            console.log("Internal Storage:")
+             console.log(request.result)
+           } else {
+            console.log("Could not retrieve information")
+           }
+        };
+     
+}
+
+
+
+
 function clearInternalDatabase(){
-    indexedDB.deleteDatabase("UserInfo")
+     // open a read/write db transaction, ready for clearing the data
+  var transaction = db.transaction(["UserInfo"], "readwrite");
+
+  // report on the success of the transaction completing, when everything is done
+  transaction.oncomplete = function(event) {
+    console.log("Database cleared")
+  };
+
+  transaction.onerror = function(event) {
+    console.log(transaction.error);
+
+  // create an object store on the transaction
+  var objectStore = transaction.objectStore("UserInfo");
+
+  // Make a request to clear all the data out of the object store
+  var objectStoreRequest = objectStore.clear();
+
+  objectStoreRequest.onsuccess = function(event) {
+  };
 }
