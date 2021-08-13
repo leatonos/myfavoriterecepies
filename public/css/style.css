@@ -488,7 +488,7 @@ input[type=text],[type=password],#difficulty {
     background-color: #45a049;
   }
 
-  .mobile,#mobile_login,#mobile_register{
+  .mobile,#mobile_login,#mobile_register,#mobile_profile{
       display: none;
   }
 

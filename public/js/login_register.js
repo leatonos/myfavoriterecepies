@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 
     //Shows Login form
-    $("#login_bnt").on("click",function(){
+    $("#login_bnt,#mobile_login").on("click",function(){
 
         $("#shadowBG").fadeIn();
         $("#login_box").fadeIn();
@@ -16,7 +16,7 @@ $(document).ready(function(){
     });
 
     //Shows Register form
-    $("#register_btn").on("click",function(){
+    $("#register_btn,mobile_register").on("click",function(){
 
         $("#shadowBG").fadeIn(300);
         $("#login_box").fadeIn(400);
