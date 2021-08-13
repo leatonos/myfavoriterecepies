@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    var photoLink ="https://firebasestorage.googleapis.com/v0/b/browser-project-4439b.appspot.com/o/Images%2Fdish.png?alt=media&token=da0f8715-ee7e-41d5-947c-7656131e4c30";
 
     //Add ingridient
     let ingridient_container = '<div class="ingridient_container"><button type="button" id="removeIngridient">-</button><input type="text" class="ingridient"><br></div>'
@@ -40,15 +41,7 @@ $(document).ready(function(){
             time = hours+"h "+minutes+"m"
         }
 
-        console.log(recipeName);
-        console.log(recipeDiff);
-        console.log(ingridients);
-        console.log(time);
-        console.log(howTo);
-        console.log(authorName);
-        console.log(authorId);
-
-        addNewRecipe(recipeName,recipeDiff,ingridients,"",time,howTo,authorName,authorId);
+        addNewRecipe(recipeName,recipeDiff,ingridients,photoLink,time,howTo,authorName,authorId);
     });
 
     function addNewRecipe(name,dif,ingridientsArray,photoLink,timeItTakes,howToMakeit,creatorName,creatorId){

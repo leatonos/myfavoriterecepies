@@ -178,6 +178,7 @@ $(document).ready(function(){
           if (doc.exists) {
               
             userName = doc.data().name;
+            saveUserName(userName);
               
           } else {
               // doc.data() will be undefined in this case
